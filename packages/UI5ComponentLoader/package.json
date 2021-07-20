@@ -14,8 +14,9 @@
 	},
 	"scripts": {
 		"lint": "eslint webapp",
-		"start": "ui5 serve",
-		"start:demo":"npm run start:list & npm run start:detail & npm start",
+		"start1": "ui5 serve",
+		"start:demo1":"npm run start:list & npm run start:detail & npm start",
+		"start":"npm run start:list & npm run start1",
 		"start:list":"cd ../listcomponent1 && npm start",
 		"start:detail":"cd ../detailcomponent1 && npm start",
 		"build": "ui5 build --include-task=generateManifestBundle generateCachebusterInfo",
