@@ -1,0 +1,26 @@
+{
+	"name": "zcomploaderlib",
+	"version": "1.0.0",
+	"private": true,
+	"devDependencies": {
+		"@sap/ux-ui5-tooling": "^1.1.10",
+		"@ui5/cli": "^2.4.0",
+		"rimraf": "^3.0.2",
+		"ui5-task-transpile": "^0.3.1",
+		"@openui5/sap.f": "^1.92.0"
+	},
+	"scripts": {
+		"build": "ui5 build --include-task=generateManifestBundle generateResourcesJson",
+		"deploy": "ui5 build preload --clean-dest --config ui5-deploy.yaml --include-task=generateManifestBundle generateResourcesJson && rimraf archive.zip"
+	},
+	"ui5": {
+		"dependencies": [
+			"@sap/ux-ui5-tooling",
+			"ui5-task-transpile",
+			"@openui5/sap.f"
+		]
+	},
+	"dependencies": {
+		"@openui5/sap.f": "^1.92.0"
+	}
+}

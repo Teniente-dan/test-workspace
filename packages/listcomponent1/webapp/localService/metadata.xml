@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="http://saps4hsrv.westeurope.cloudapp.azure.com:8003/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://saps4hsrv.westeurope.cloudapp.azure.com:8003/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://saps4hsrv.westeurope.cloudapp.azure.com:8003/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://saps4hsrv.westeurope.cloudapp.azure.com:8003/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://saps4hsrv.westeurope.cloudapp.azure.com:8003/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://saps4hsrv.westeurope.cloudapp.azure.com:8003/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://saps4hsrv.westeurope.cloudapp.azure.com:8003/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://saps4hsrv.westeurope.cloudapp.azure.com:8003/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://saps4hsrv.westeurope.cloudapp.azure.com:8003/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZCL_CONFIG_C_CDS" xml:lang="de" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="zcl_config_cType" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="type"/>
+                    <PropertyRef Name="scenario"/>
+                    <PropertyRef Name="level_cl"/>
+                </Key>
+                <Property Name="type" Type="Edm.String" Nullable="false" MaxLength="8" sap:label=""/>
+                <Property Name="scenario" Type="Edm.String" Nullable="false" MaxLength="8" sap:label=""/>
+                <Property Name="level_cl" Type="Edm.String" Nullable="false" MaxLength="1" sap:display-format="NonNegative" sap:label=""/>
+                <Property Name="viewid" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label=""/>
+                <Property Name="componentid" Type="Edm.String" MaxLength="80" sap:label=""/>
+                <Property Name="componenturl" Type="Edm.String" MaxLength="80" sap:label=""/>
+                <Property Name="fioriElements" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Boolean" sap:quickinfo="Ersatz für echten boolschen Typ: 'X' == wahr '' == falsch"/>
+                <Property Name="layout" Type="Edm.String" MaxLength="80" sap:label=""/>
+                <NavigationProperty Name="toParams" Relationship="ZCL_CONFIG_C_CDS.assoc_D83E067E0E0A4F0EE2E4A25D497EA564" FromRole="FromRole_assoc_D83E067E0E0A4F0EE2E4A25D497EA564" ToRole="ToRole_assoc_D83E067E0E0A4F0EE2E4A25D497EA564"/>
+            </EntityType>
+            <EntityType Name="zcl_param_CType" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="type"/>
+                    <PropertyRef Name="scenario"/>
+                    <PropertyRef Name="componentid"/>
+                    <PropertyRef Name="id"/>
+                    <PropertyRef Name="seqnr"/>
+                </Key>
+                <Property Name="type" Type="Edm.String" Nullable="false" MaxLength="8" sap:label=""/>
+                <Property Name="scenario" Type="Edm.String" Nullable="false" MaxLength="8" sap:label=""/>
+                <Property Name="componentid" Type="Edm.String" Nullable="false" MaxLength="80" sap:label=""/>
+                <Property Name="id" Type="Edm.String" Nullable="false" MaxLength="40" sap:label=""/>
+                <Property Name="seqnr" Type="Edm.String" Nullable="false" MaxLength="5" sap:display-format="NonNegative" sap:label=""/>
+                <Property Name="value" Type="Edm.String" MaxLength="40" sap:label=""/>
+            </EntityType>
+            <Association Name="assoc_D83E067E0E0A4F0EE2E4A25D497EA564" sap:content-version="1">
+                <End Type="ZCL_CONFIG_C_CDS.zcl_config_cType" Multiplicity="1" Role="FromRole_assoc_D83E067E0E0A4F0EE2E4A25D497EA564"/>
+                <End Type="ZCL_CONFIG_C_CDS.zcl_param_CType" Multiplicity="*" Role="ToRole_assoc_D83E067E0E0A4F0EE2E4A25D497EA564"/>
+            </Association>
+            <EntityContainer Name="ZCL_CONFIG_C_CDS_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="zcl_config_c" EntityType="ZCL_CONFIG_C_CDS.zcl_config_cType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="zcl_param_C" EntityType="ZCL_CONFIG_C_CDS.zcl_param_CType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <AssociationSet Name="assoc_D83E067E0E0A4F0EE2E4A25D497EA564" Association="ZCL_CONFIG_C_CDS.assoc_D83E067E0E0A4F0EE2E4A25D497EA564" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="zcl_config_c" Role="FromRole_assoc_D83E067E0E0A4F0EE2E4A25D497EA564"/>
+                    <End EntitySet="zcl_param_C" Role="ToRole_assoc_D83E067E0E0A4F0EE2E4A25D497EA564"/>
+                </AssociationSet>
+            </EntityContainer>
+            <Annotations Target="ZCL_CONFIG_C_CDS.ZCL_CONFIG_C_CDS_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                <Annotation Term="Aggregation.ApplySupported">
+                    <Record>
+                        <PropertyValue Property="Transformations">
+                            <Collection>
+                                <String>aggregate</String>
+                                <String>groupby</String>
+                                <String>filter</String>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Rollup" EnumMember="None"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <atom:link rel="self" href="http://saps4hsrv.westeurope.cloudapp.azure.com:8003/sap/opu/odata/sap/ZCL_CONFIG_C_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://saps4hsrv.westeurope.cloudapp.azure.com:8003/sap/opu/odata/sap/ZCL_CONFIG_C_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
