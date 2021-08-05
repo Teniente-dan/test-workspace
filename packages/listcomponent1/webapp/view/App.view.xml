@@ -16,7 +16,7 @@
 		</title>
 		<content>
 			<m:List items="{/FlightCollection}" selectionChange=".onSelectionChange" mode="SingleSelectMaster">
-				<m:StandardListItem type="Active" title="{carrid}"  iconDensityAware="false" iconInset="false"/>
+				<m:StandardListItem type="Active" title="{carrid}" iconDensityAware="false" iconInset="false"/>
 			</m:List>
 		</content>
 	</DynamicPage>

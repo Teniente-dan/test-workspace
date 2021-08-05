@@ -29,14 +29,17 @@ sap.ui.define([
 		CONFIG: "Config",
 		init: function () {
 			let scenarioParams;
-			var compData = this.getComponentData();
+			var compData = { startupParameters : { scenario : ["S00000001"], 
+												   type: ["T00000001"],
+												   startupParameters: 'tal vez el titulo' } }
+			// this.getComponentData();
 			// call the base component's init function
 			UIComponent.prototype.init.apply(this, arguments);
 			if (compData && compData.startupParameters && compData.startupParameters.scenario) {
 				scenarioParams = {
 					scenario: compData.startupParameters.scenario[0],
 					type: compData.startupParameters.type[0],
-					startupParameters: compData.startupParameters
+					startupParameters: compData.startupParameters					
 				};
 			}
 			this._ocConfigService = new ConfigService(this.getModel("config"));

@@ -1,0 +1,16 @@
+{
+    "d": {
+        "results": [
+            {                
+                "type": "T0000001",
+                "scenario": "S0000001",
+                "level_cl": "1",
+                "viewid": "MA",
+                "componentid": "be.wl.listcomponent1",
+                "componenturl": "/urlxxx/",
+                "fiori_elements": "",
+                "layout": ""
+            }
+        ]
+    }
+}

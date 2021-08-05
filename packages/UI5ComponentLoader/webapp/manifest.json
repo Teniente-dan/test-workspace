@@ -25,7 +25,7 @@
 				"uri": "/sap/opu/odata/sap/ZCL_SCENARIO_C_CDS/",
 				"type": "OData",
 				"settings": {
-					"localUri": "localService/metadata.xml"
+					"localUri": "localService/metadata1.xml"
 				}
 			}
 		}

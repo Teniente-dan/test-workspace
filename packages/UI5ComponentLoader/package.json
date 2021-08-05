@@ -10,7 +10,8 @@
 		"@sap/ux-ui5-tooling": "1",
 		"eslint": "^6.2.2",
 		"ui5-task-transpile": "^0.3.1",
-		"rimraf": "3.0.2"
+		"rimraf": "3.0.2",
+		"zcomploaderlib": "1.0.0"
 	},
 	"scripts": {
 		"lint": "eslint webapp",
@@ -20,12 +21,13 @@
 		"start:list":"cd ../listcomponent1 && npm start",
 		"start:detail":"cd ../detailcomponent1 && npm start",
 		"build": "ui5 build --include-task=generateManifestBundle generateCachebusterInfo",
-		"deploy": "ui5 build preload --clean-dest --config ui5-deploy.yaml --include-task=generateManifestBundle generateCachebusterInfo && rimraf archive.zip"
+		"deploy": "ui5 build preload --clean-dest --config ui5-deploy.yaml --include-task=generateManifestBundle generateCachebusterInfo && rimraf archive.zip"		
 	},
 	"ui5": {
 		"dependencies": [
 			"@sap/ux-ui5-tooling",
-			"ui5-task-transpile"
+			"ui5-task-transpile",
+			"zcomploaderlib"
 		]
 	}
 }

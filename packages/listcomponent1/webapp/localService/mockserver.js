@@ -96,7 +96,7 @@ sap.ui.define([
                         // oCall.mParameters.oFilteredData.ext = "xls";
 {/* <m:List items="{/FlightCollection}" selectionChange=".onSelectionChange" mode="SingleSelectMaster">
 				<m:StandardListItem type="Active" title="{carrid} - {connid}" description="{flightDetails/countryFrom} {flightDetails/cityFrom} => {flightDetails/countryTo} {flightDetails/cityTo}" iconDensityAware="false" iconInset="false"/> */}
-                        console.log("Operacion");                
+                        console.log("Flights");                
                     }, "FlightCollection");
 
 

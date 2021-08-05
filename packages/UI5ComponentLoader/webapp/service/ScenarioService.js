@@ -15,7 +15,9 @@ sap.ui.define([
 			if (this.scenarioTitles[scenarioid]) {
 				return Promise.resolve(this.scenarioTitles[scenarioid]);
 			}
-			return this.odata("/zcl_scenario_c('" + scenarioid + "')").get().then(response => {
+			// return this.odata("/zcl_scenario_c1('" + scenarioid + "')").get().then(response => {
+				// return this.odata("/zcl_scenario_c1('0001')").get().then(response => {
+			return this.odata("/zcl_scenario_c1").get().then(response => {
 				this.scenarioTitles[scenarioid] = response;
 				return response;
 			});
