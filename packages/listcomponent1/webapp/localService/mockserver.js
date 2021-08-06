@@ -7,7 +7,7 @@ sap.ui.define([
     "use strict";
 
     var oMockServer,
-        _sAppPath = "be.wl.listcomponent1/",
+        _sAppPath = "be/wl/listcomponent1/",
         _sJsonFilesPath = _sAppPath + "localService/mockdata";
 
     var oMockServerInterface = {
@@ -28,6 +28,7 @@ sap.ui.define([
                     oManifestModel = new JSONModel(sManifestUrl);
 
                 oManifestModel.attachRequestCompleted(function () {
+                    console.log("getProp");
                     var oUriParameters = new UriParameters(window.location.href),
                         // parse manifest for local metatadata URI
                         sJsonFilesUrl = sap.ui.require.toUrl(_sJsonFilesPath),
@@ -89,6 +90,15 @@ sap.ui.define([
                     // set requests and start the server
                     oMockServer.setRequests(aRequests);
                     oMockServer.start();
+
+                    oMockServer.attachAfter(sap.ui.core.util.MockServer.HTTPMETHOD.GET, function (oCall) {
+                        // oCall.mParameters.oFilteredData.name = "xxx";
+                        // oCall.mParameters.oFilteredData.ext = "xls";
+{/* <m:List items="{/FlightCollection}" selectionChange=".onSelectionChange" mode="SingleSelectMaster">
+				<m:StandardListItem type="Active" title="{carrid} - {connid}" description="{flightDetails/countryFrom} {flightDetails/cityFrom} => {flightDetails/countryTo} {flightDetails/cityTo}" iconDensityAware="false" iconInset="false"/> */}
+                        console.log("Flights");                
+                    }, "FlightCollection");
+
 
                     Log.info("Running the app with mock data");
                     fnResolve();

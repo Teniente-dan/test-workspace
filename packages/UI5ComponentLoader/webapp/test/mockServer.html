@@ -7,12 +7,10 @@
 
         <script
             id="sap-ui-bootstrap"
-            src="/resources/sap-ui-core.js"
+            src="/resources/sap-ui-core.js"            
             data-sap-ui-theme="sap_fiori_3"
-            data-sap-ui-resourceroots='{
-				"be.wl.listcomponent1": "../"
-			}'
-            data-sap-ui-oninit="module:be/wl/listcomponent1/test/initMockServer"
+			data-sap-ui-resourceroots='{"be.wl.CompLoaderApp": "../"}'
+            data-sap-ui-oninit="module:be/wl/CompLoaderApp/test/initMockServer"
             data-sap-ui-compatVersion="edge"
             data-sap-ui-async="true"
 			data-sap-ui-preload="async"
@@ -22,9 +20,9 @@
     <body class="sapUiBody">
         <div
             data-sap-ui-component
-            data-name="be.wl.listcomponent1"
+		    data-name="be.wl.CompLoaderApp"            
             data-id="container"
-            data-settings='{"id" : "listcomponent1"}'
+            data-settings='{"id" : "CompLoaderApp"}'
         ></div>
     </body>
 </html>
