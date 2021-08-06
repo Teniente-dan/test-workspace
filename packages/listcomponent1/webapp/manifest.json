@@ -42,7 +42,7 @@
   "sap.ui5": {
     "flexEnabled": false,
     "rootView": {
-      "viewName": "listcomponent1.view.App",
+      "viewName": "be.wl.listcomponent1.view.App",
       "type": "XML",
       "async": true,
       "id": "App"

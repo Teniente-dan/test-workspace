@@ -100,7 +100,7 @@ sap.ui.define([
                             "level_cl": "1",
                             "viewid": "MA",
                             "componentid": "be.wl.listcomponent1",
-                            "componenturl": "../listcomponent1/",
+                            "componenturl": "http://localhost:8081",
                             "fiori_elements": "",
                             "layout": "",
                             "toParams": { results: [{
@@ -184,10 +184,11 @@ sap.ui.define([
                     oMockServer1.start();
 
                     oMockServer1.attachAfter(sap.ui.core.util.MockServer.HTTPMETHOD.GET, function (oCall) {
-                        oCall.mParameters.oFilteredData.results = [{                                
+                        delete oCall.mParameters.oFilteredData.results;
+                        oCall.mParameters.oFilteredData.data = {
                             "scenario_id": "S0000002",
                             "scenario_descr": "Demo Scenario1"
-                        }]
+                        }
                         // oCall.mParameters.oFilteredData.name = "xxx";
                         // oCall.mParameters.oFilteredData.ext = "xls";
                         {/* <m:List items="{/FlightCollection}" selectionChange=".onSelectionChange" mode="SingleSelectMaster">

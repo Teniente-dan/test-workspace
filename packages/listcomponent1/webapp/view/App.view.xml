@@ -1,9 +1,8 @@
-<mvc:View controllerName="listcomponent1.controller.App"
+<mvc:View controllerName="be.wl.listcomponent1.controller.App"
 	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" height="100%"
 	xmlns:m="sap.m"
 	xmlns="sap.f"
-	>
-	<m:Title text="asdas"></m:Title>
+	>	
 	<DynamicPage id="asd">
 		<title>
 			<DynamicPageTitle>

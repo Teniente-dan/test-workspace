@@ -10,7 +10,8 @@
     ],
     "main": "webapp/index.html",
     "scripts": {
-        "start":"ui5 serve",
+        "start":"ui5 serve --open 'test/mockServer.html'",
+        "start1":"ui5 serve",
         "start:fiori": "fiori run --open 'index.html'",
         "start-local": "fiori run --config ./ui5-local.yaml --open 'index.html'",
         "build": "ui5 build -a --clean-dest --include-task=generateManifestBundle generateCachebusterInfo",

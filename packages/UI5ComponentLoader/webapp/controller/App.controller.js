@@ -85,7 +85,7 @@ sap.ui.define([
 					}
 					//only first time set title for a component
 					this.getOwnerComponent()._oScenarioService.getTitle(this.getScenario().scenario).then(response => {
-						comp.component.getManifest()["sap.app"].title = response.data.scenario_descr;
+						comp.component.getManifest()["sap.app"].title = response.data.data.scenario_descr;
 					});
 				}
 				var currentContainerContent = this.byId("flexibleColumnLayout").getAggregation(this.getComponent(level).getViewAggregation() +

@@ -1,7 +1,8 @@
 sap.ui.define([
 	"be/wl/zcomploaderlib/cl/UIComponent",
 	"sap/ui/Device",
-	"listcomponent1/model/models"
+	// "listcomponent1/model/models"
+	"./model/models"
 ], function (UIComponent, Device, models) {
 	"use strict";
 
